@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<r:QApplication
+	xmlns:fx="http://ns.adobe.com/mxml/2009"
+	xmlns:r="http://ns.renaun.com/mxml/2010"
+	xmlns:x="library://qnx.blackberry.com/playbook/ui"
+	margins="{Vector.&lt;Number&gt;([12,12,12,12])}"
+	flow="{ContainerFlow.HORIZONTAL}"
+	size="100" sizeUnit="{SizeUnit.PERCENT}"
+	complete="start()" 
+	xmlns:listClasses="qnx.ui.listClasses.*" xmlns:buttons="qnx.ui.buttons.*">
+	<fx:Script>
+		<![CDATA[
+			import qnx.ui.core.ContainerFlow;
+			import qnx.ui.core.Containment;
+			import qnx.ui.core.SizeUnit;
+			import qnx.ui.data.DataProvider;
+			
+			[Bindable]
+			private var test:int = 200;
+			
+			protected function start():void
+			{
+				lst.dataProvider = new DataProvider([{label:"hi1", data: 1}, {label:"hi2", data: 2}]);
+			}
+			
+			protected function chagneValues():void
+			{
+				flow = ContainerFlow.VERTICAL;
+				bottom.size = 300;
+				lst.width = 240;
+				test = 100;
+				btn3.width += 5;
+			}			
+		]]>
+	</fx:Script>	
+	<r:QContainer size="244" sizeUnit="{SizeUnit.PIXELS}" width="10"	
+				  containment="{Containment.DOCK_RIGHT}">
+		<buttons:LabelButton label="Test" width="{test}"/>
+		<listClasses:List id="lst" width="100" height="200" />
+	</r:QContainer>
+	<r:QContainer id="bottom" size="140" sizeUnit="{SizeUnit.PIXELS}"
+				  margins="{Vector.&lt;Number&gt;([22,22,22,22])}"		
+				  containment="{Containment.DOCK_BOTTOM}">
+		<buttons:LabelButton label="BOTTOM BUTTON" width="200"/>
+	</r:QContainer>
+	<buttons:LabelButton label="Test 2" height="120" click="chagneValues()"/>
+	<buttons:LabelButton id="btn3" label="Test 3"/>
+</r:QApplication>

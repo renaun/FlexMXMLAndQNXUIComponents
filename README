@@ -1,0 +1,28 @@
+Author: Renaun Erickson http://renaun.com
+
+Projects:
+QMXML - Extended QNX Container class to allow QNX UI to work with MXML (Flex and non-Flex)
+
+FlexAndQNX - Flash Builder 4 Flex AIR project showcasing how to use QNX in Flex app with MXML.
+NonFlexMXMLUsingQNX - Flash Builder 4 AIR project using MXML and QNX but not Flex components.
+
+Description:
+These classes are "as is". They are not complete but work for the basic use case. They may 
+or may not be developed further. They are meant to show what could work and there is plenty 
+of stuff might have issues. Having said that... what is this?
+
+QNX UI Components are the UI components used in the BlackBerry Tablet OS which runs on the
+PlayBook tablet. The QNX components is a AS3 component library. I extended QNX Container class
+to allow for usage in MXML. MXML is not Flex, you can use MXML with no Flex components. That is 
+what I did here. I made the QApplication and QContainer to be used in MXML for both non-Flex apps
+and Flex apps.
+
+The examples both reference the QMXML.swc.
+
+Here is a simple Non-Flex QNX UI app with one button:
+<?xml version="1.0" encoding="utf-8"?>
+<r:QApplication xmlns:r="http://ns.renaun.com/mxml/2010" 
+				xmlns:fx="http://ns.adobe.com/mxml/2009"
+				xmlns:buttons="qnx.ui.buttons.*">
+	<buttons:Button />
+</r:QApplication>

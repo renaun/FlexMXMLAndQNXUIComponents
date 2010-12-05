@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+			   xmlns:r="http://ns.renaun.com/mxml/2010"
+			   xmlns:s="library://ns.adobe.com/flex/spark" 
+			   xmlns:mx="library://ns.adobe.com/flex/mx"
+			   xmlns:buttons="qnx.ui.buttons.*" xmlns:listClasses="qnx.ui.listClasses.*"
+			   width="1024" height="600"
+			   backgroundColor="0xcccccc" 
+			   >
+	<s:layout>
+		<s:HorizontalLayout />
+	</s:layout>
+	<fx:Script>
+		<![CDATA[
+			import mx.collections.ArrayCollection;
+			
+			import qnx.ui.core.ContainerFlow;
+			import qnx.ui.core.SizeUnit;
+			import qnx.ui.data.DataProvider;
+			import qnx.ui.events.ListEvent;
+			private var data:Array = [];
+			[Bindable]
+			private var chartData:ArrayCollection;
+			private function createData():void
+			{
+				data = [];
+				for (var i:int = 0; i < 50; i++)
+					data.push({label: "Point " + i, data: i+(Math.random()*30),
+						data2: i+60+(Math.random()*60),
+						data3: i+80+(Math.random()*120)});
+				lstData.dataProvider = new DataProvider(data);
+				chartData = new ArrayCollection(data);
+			}
+
+			protected function lstData_listItemClickedHandler(event:ListEvent):void
+			{
+				trace(event.data.data + " - " + event.row);
+			}
+
+		]]>
+	</fx:Script>
+	<fx:Declarations>		
+		<!-- Define custom colors for use as fills in the AreaChart control. -->
+		<mx:SolidColor id="sc1" color="0x336699" alpha=".3"/>
+		<mx:SolidColor id="sc2" color="0x993333" alpha=".3"/>
+		<mx:SolidColor id="sc3" color="0x339933" alpha=".3"/>
+
+		<!-- Define custom Strokes. -->
+		<mx:SolidColorStroke id = "s1" color="0x336699" weight="2"/>
+		<mx:SolidColorStroke id = "s2" color="0x993333" weight="2"/>
+		<mx:SolidColorStroke id = "s3" color="0x339933" weight="2"/>
+		
+		<mx:SeriesInterpolate id="seriesInterpolate" duration="500" />
+
+	</fx:Declarations>
+
+	<s:Group height="100%" width="20%">
+		<r:QContainer id="c" align="near">
+			<buttons:LabelButton label="Create Data" click="createData()" />
+			<listClasses:List id="lstData" size="100" sizeUnit="percent"
+							  listItemClicked="lstData_listItemClickedHandler(event)" />
+		</r:QContainer>
+	</s:Group>
+	<s:HGroup width="80%" height="100%">
+		<mx:AreaChart id="Areachart" height="100%" width="80%"
+					  paddingLeft="5" paddingRight="5"
+					  showDataTips="true" dataProvider="{chartData}">
+			
+			<mx:horizontalAxis>
+				<mx:CategoryAxis categoryField="label"/>
+			</mx:horizontalAxis>
+			
+			<mx:series>
+				<mx:AreaSeries yField="data" form="curve" displayName="Plot 1" showDataEffect="{seriesInterpolate}"
+							   areaStroke="{s1}" areaFill="{sc1}"/>
+				<mx:AreaSeries yField="data2" form="curve" displayName="Plot 2" showDataEffect="{seriesInterpolate}"
+							   areaStroke="{s2}" areaFill="{sc2}"/>
+				<mx:AreaSeries yField="data3" form="curve" displayName="Plot 3" showDataEffect="{seriesInterpolate}"
+							   areaStroke="{s3}" areaFill="{sc3}"/>
+			</mx:series>
+		</mx:AreaChart>
+		
+		<mx:Legend dataProvider="{Areachart}"/>
+	</s:HGroup>
+</s:Application>

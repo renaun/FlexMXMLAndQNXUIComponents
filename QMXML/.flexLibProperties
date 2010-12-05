@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties includeAllClasses="true" version="3">
+  <includeClasses>
+    <classEntry path="com.renaun.mxml.QApplication"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests>
+    <namespaceManifestEntry manifest="Manifest.xml" namespace="http://ns.renaun.com/mxml/2010"/>
+  </namespaceManifests>
+</flexLibProperties>

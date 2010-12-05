@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<!-- Manifest.xml -->
+<componentPackage>
+    <component id="QApplication" class="com.renaun.mxml.QApplication"/>
+    <component id="QContainer" class="com.renaun.mxml.QContainer"/>
+</componentPackage>
