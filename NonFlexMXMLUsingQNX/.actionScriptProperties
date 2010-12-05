@@ -42,8 +42,8 @@
             </crossDomainRsls>
           </libraryPathEntry>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/air/applicationupdater_ui.swc" useDefaultLinkType="false"/>
-          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/air/applicationupdater.swc" useDefaultLinkType="false"/>
           <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/datavisualization.swc" useDefaultLinkType="false"/>
+          <libraryPathEntry kind="3" linkType="1" path="${PROJECT_FRAMEWORKS}/libs/air/applicationupdater.swc" useDefaultLinkType="false"/>
         </excludedEntries>
       </libraryPathEntry>
       <libraryPathEntry kind="1" linkType="1" path="libs"/>
@@ -51,10 +51,13 @@
     <sourceAttachmentPath/>
   </compiler>
   <applications>
+    <application path="DisplayButton.mxml">
+      <airExcludes/>
+    </application>
     <application path="NonFlexMXMLUsingQNX.mxml">
       <airExcludes/>
     </application>
-    <application path="DisplayButton.mxml">
+    <application path="DisplayButtonAS3.as">
       <airExcludes/>
     </application>
   </applications>
