@@ -40,7 +40,7 @@ import flash.events.Event;
  *  @author Renaun Erickson
  *  
  *  @langversion 3.0
- *  @productversion BlackBerry Tablet OS SDK 0.9.1
+ *  @productversion BlackBerry Tablet OS SDK 0.9.2
  *  @productversion Flex 4.5
  */
 public class QApplication extends QContainer

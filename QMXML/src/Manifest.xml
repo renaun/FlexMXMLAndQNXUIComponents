@@ -3,4 +3,5 @@
 <componentPackage>
     <component id="QApplication" class="com.renaun.mxml.QApplication"/>
     <component id="QContainer" class="com.renaun.mxml.QContainer"/>
+    <component id="Image" class="com.renaun.qnx.ui.display.Image"/>
 </componentPackage>

@@ -6,6 +6,10 @@ QMXML - Extended QNX Container class to allow QNX UI to work with MXML (Flex and
 FlexAndQNX - Flash Builder 4 Flex AIR project showcasing how to use QNX in Flex app with MXML.
 NonFlexMXMLUsingQNX - Flash Builder 4 AIR project using MXML and QNX but not Flex components.
 
+Dependencies:
+BlackBerry Tablet OS SDK 0.9.1 Beta 2
+Flex 4.1 or higher
+
 Description:
 These classes are "as is". They are not complete but work for the basic use case. They may 
 or may not be developed further. They are meant to show what could work and there is plenty 

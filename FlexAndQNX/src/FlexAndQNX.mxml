@@ -53,9 +53,8 @@
 		<mx:SeriesInterpolate id="seriesInterpolate" duration="500" />
 
 	</fx:Declarations>
-
-	<s:Group height="100%" width="20%">
-		<r:QContainer id="c" align="near">
+	<s:Group height="100%" width="30%">
+		<r:QContainer id="c">
 			<buttons:LabelButton label="Create Data" click="createData()" />
 			<listClasses:List id="lstData" size="100" sizeUnit="percent"
 							  listItemClicked="lstData_listItemClickedHandler(event)" />
