@@ -1,0 +1,3 @@
+[submodule "QMXML/libs/as3viewnavigator"]
+	path = QMXML/libs/as3viewnavigator
+	url = git://github.com/pwalczyszyn/as3viewnavigator.git
