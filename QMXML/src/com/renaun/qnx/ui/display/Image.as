@@ -27,7 +27,6 @@ import flash.display.Bitmap;
 import flash.events.Event;
 
 import qnx.ui.core.Container;
-import qnx.ui.core.UIComponent;
 import qnx.ui.display.Image;
 
 /**
@@ -69,14 +68,17 @@ public class Image extends qnx.ui.display.Image
 	
 	private function completeHandler(event:Event):void
 	{
+		removeEventListener(Event.COMPLETE, completeHandler);
 		if (getChildAt(0) is Bitmap)
 		{
 			var b:Bitmap = getChildAt(0) as Bitmap;
-			setSize(b.width, b.height);
+			;//setSize(b.width, b.height);
+			
 			//trace(b.width + " - " + b.height);
 			// For now this works, i tried invalidateProperty() but that didn't work
 			//(parent as UIComponent).setSize((parent as UIComponent).width, (parent as UIComponent).height);
-			(parent as Container).layout();
+			if (parent is Container)
+				(parent as Container).layout();
 		}
 	}
 

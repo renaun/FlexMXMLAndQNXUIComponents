@@ -3,6 +3,7 @@
   <includeClasses>
     <classEntry path="com.renaun.mxml.QApplication"/>
     <classEntry path="com.renaun.qnx.ui.display.Image"/>
+    <classEntry path="com.renaun.view.QViewNavigator"/>
   </includeClasses>
   <includeResources/>
   <namespaceManifests>

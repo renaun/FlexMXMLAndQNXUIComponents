@@ -23,7 +23,7 @@ https://github.com/renaun/FlexMXMLAndQNXUIComponents
 */
 package com.renaun.mxml
 {
-	
+
 import flash.display.DisplayObject;
 import flash.display.DisplayObjectContainer;
 import flash.display.Stage;
@@ -75,7 +75,6 @@ import qnx.ui.core.SizeUnit;
  *  
  *  @langversion 3.0
  *  @productversion BlackBerry Tablet OS SDK 0.9.2
- *  @productversion Flex 4.5
  */
 public class QContainer extends Container implements IVisualElement
 {

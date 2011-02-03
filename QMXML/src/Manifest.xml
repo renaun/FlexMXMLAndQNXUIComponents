@@ -3,5 +3,8 @@
 <componentPackage>
     <component id="QApplication" class="com.renaun.mxml.QApplication"/>
     <component id="QContainer" class="com.renaun.mxml.QContainer"/>
+    <component id="QView" class="com.renaun.view.QView"/>
+    <component id="QViewNavigator" class="com.renaun.view.QViewNavigator"/>
     <component id="Image" class="com.renaun.qnx.ui.display.Image"/>
+    <component id="List" class="com.renaun.qnx.ui.listClasses.List"/>
 </componentPackage>
